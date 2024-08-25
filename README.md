@@ -1,1 +1,1 @@
-# aws-lambda-eventbridge-golang-using-terraform
+# AWS Lambda EventBridge Golang Using Terraform
