@@ -1,4 +1,4 @@
-variable "LAMBDA_ENV" {
+variable "ENV" {
   type = string
 }
 

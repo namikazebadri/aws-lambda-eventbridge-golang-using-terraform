@@ -22,28 +22,28 @@ module "cart_crontab" {
   source = "./lambda/cart/crontab"
   iam_role = aws_iam_role.lambda.arn
   scheduler_iam_role = aws_iam_role.scheduler_role
-  LAMBDA_ENV = var.LAMBDA_ENV
+  ENV = var.ENV
 }
 
 module "order_crontab" {
   source = "./lambda/order/crontab"
   iam_role = aws_iam_role.lambda.arn
   scheduler_iam_role = aws_iam_role.scheduler_role
-  LAMBDA_ENV = var.LAMBDA_ENV
+  ENV = var.ENV
 }
 
 module "product_crontab" {
   source = "./lambda/product/crontab"
   iam_role = aws_iam_role.lambda.arn
   scheduler_iam_role = aws_iam_role.scheduler_role
-  LAMBDA_ENV = var.LAMBDA_ENV
+  ENV = var.ENV
 }
 
 module "user_crontab" {
   source = "./lambda/user/crontab"
   iam_role = aws_iam_role.lambda.arn
   scheduler_iam_role = aws_iam_role.scheduler_role
-  LAMBDA_ENV = var.LAMBDA_ENV
+  ENV = var.ENV
 }
 
 output "status" {

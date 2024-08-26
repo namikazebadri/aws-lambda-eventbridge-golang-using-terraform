@@ -27,7 +27,7 @@ data "archive_file" "function_archive" {
 }
 
 resource "aws_lambda_function" "order_crontab" {
-  function_name = "${var.LAMBDA_ENV}-${local.project}_${local.module}_${local.function}"
+  function_name = "${var.ENV}-${local.project}_${local.module}_${local.function}"
   description   = "Lambda for ${local.module} module."
   role          = var.iam_role
   handler       = local.function
@@ -40,7 +40,7 @@ resource "aws_lambda_function" "order_crontab" {
 }
 
 resource "aws_cloudwatch_event_rule" "crontab_trigger" {
-  name                = "${var.LAMBDA_ENV}-${local.project}_${local.module}_${local.function}"
+  name                = "${var.ENV}-${local.project}_${local.module}_${local.function}"
   schedule_expression = "cron(1 * * * ? *)"
 }
 
